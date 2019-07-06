@@ -1,0 +1,54 @@
+﻿    @model List<ConsultaCEP.Models.CEP>
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+
+
+    <html>
+
+    <h2>Consulta CEP</h2>
+
+    <div style="margin-top:30px" class="container">
+        <form asp-action="ConsultarCEP">
+            <input type="submit" value="Consultar & Armazenar" class="btn btn-success" /><br /><br /><br />
+            CEP  <input type="text" name="cep" />
+            <br /><br /><br />
+        </form>
+    </div>
+    <table class="table">
+
+        <tr>
+
+            <td>CEP</td>
+            <td>Logradouro</td>
+            <td>Bairro</td>
+            <td>Localidade</td>
+            <td>UF</td>
+            <td>Ibge</td>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.Cep</td>
+                <td>@item.Logradouro</td>
+                <td>@item.Bairro</td>
+                <td>@item.Localidade</td>
+                <td>@item.Uf</td>
+                <td>@item.Ibge</td>
+
+
+
+
+            </tr>
+
+        }
+
+
+    </table>
+
+    <p> <h4>Horario: @DateTime.Now;</h4></p>
+</html>
